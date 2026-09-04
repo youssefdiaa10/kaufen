@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: kaufen-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-kaufen_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-kaufen_pass}
+      POSTGRES_DB: ${DB_NAME:-kaufen_db}
+    ports:
+      - '${DB_PORT:-5433}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
