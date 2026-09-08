@@ -1,10 +1,10 @@
 import {
-  BaseEntity,
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
+    BaseEntity,
+    Column,
+    Entity,
+    JoinColumn,
+    ManyToOne,
+    PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Product } from './product.entity.ts';
 import { User } from './user.entity.ts';
@@ -20,7 +20,7 @@ export class Review extends BaseEntity {
 
   @ManyToOne(() => Product)
   @JoinColumn({ name: 'product_id' })
-  product_id!: Product;
+  product!: Product;
 
   @Column()
   rating!: number;

@@ -11,7 +11,7 @@ import { Product } from './product.entity.ts';
 
 @Entity()
 export class CartItem extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id!: string;
 
   @ManyToOne(() => Carts)
