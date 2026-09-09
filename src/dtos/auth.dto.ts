@@ -1,4 +1,4 @@
-import { OmitType } from '@nestjs/mapped-types';
+import { OmitType, PickType } from '@nestjs/mapped-types';
 import { BaseTokenDto, BaseUserDto } from './index.dto.ts';
 
 export class SignInDto extends OmitType(BaseUserDto, [
