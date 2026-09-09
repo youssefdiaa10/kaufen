@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller.ts';
 import { AppService } from './app.service.ts';
 import { AuthModule } from './modules/auth/auth.module.ts';
+import { UserModule } from './modules/user/user.module.js';
 import configuration from './config/configuration.ts';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
@@ -45,6 +46,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'kaufen',
     }),
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
